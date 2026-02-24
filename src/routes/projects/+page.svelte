@@ -1,7 +1,11 @@
+<script>
+  import projects from "$lib/projects.json";
+  import Project from "$lib/Project.svelte";
+</script>
 <svelte:head>
   <title>Projects</title>
 </svelte:head>
-<h1>Projects</h1>
+<h1>{ projects.length } Projects</h1>
 <nav> 
     <a href=".">Home</a>
     <a href="projects" class="current">Projects</a>
@@ -9,13 +13,12 @@
     <a href="resume">Resume</a>
     <a href="https://github.com/ecanales23" target="_blank">GitHub</a>
 </nav>
+
 <div class="projects">
-  <article>
-            <h2><a href="../Assignment 2/A2_report.html">Assignment 2</a></h2>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-            <p>This assignment works with public and proprietary datasets related to MAPC’s research themes and subthemes. This is an exploratory analysis using visualization, with a focus on understanding the shape and structure of the data, investigating initial questions, and developing preliminary insights and hypotheses.</p>
-        </article>
-        <article>
+  {#each projects as p}
+    <Project data={p} />
+  {/each}
+<!--         <article>
             <h2>Sunt quidem porro quia?</h2>
             <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
             <p>Iusto distinctio, fugiat sequi dolore perspiciatis itaque molestias quibusdam provident aliquid eligendi ullam dicta necessitatibus fugit beatae. Fugiat possimus maxime et, odit velit iusto qui, quisquam rerum, ab eaque laboriosam.</p>
@@ -69,5 +72,5 @@
             <h2>Possimus similique voluptate molestiae!</h2>
             <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
             <p>Voluptas, quod perferendis rem voluptatibus recusandae rerum adipisci doloremque facere repellendus blanditiis pariatur fugiat commodi sunt error dicta ea unde neque? Officiis porro dignissimos temporibus accusamus cupiditate recusandae assumenda provident.</p>
-        </article>
-    </div>
+        </article> -->
+</div>

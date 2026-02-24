@@ -120,37 +120,6 @@ form textarea:focus {
   outline: none;
   border-color: var(--color-accent);
 }
-
-/* ================================
-  Projects Page
-================================ */
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  gap: 1em;
-  grid-auto-rows: auto;
-}
-
-
-.projects article {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
-  border: 1px solid var(--lighter-gray);
-  border-radius: 6px;
-  padding: 1em;
-}
-
-.projects h2 {
-  margin: 0;
-}
-
 /* ================================
  Resume Page
 ================================ */
@@ -173,7 +142,6 @@ img {
 .download-button:hover {
   background-color: var(--lighter-gray);
 }
-
 /* ================================
    Resume Page Styling
 ================================ */
