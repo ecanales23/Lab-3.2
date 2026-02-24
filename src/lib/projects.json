@@ -1,13 +1,13 @@
 [
   {
     "title": "Assignment 2",
-    "image": "/images/project1.png",
+    "image": "images/project1.png",
     "description": "This assignment works with public and proprietary datasets related to MAPC’s research themes and subthemes. This is an exploratory analysis using visualization, with a focus on understanding the shape and structure of the data, investigating initial questions, and developing preliminary insights and hypotheses."
   }
   ,
   {
     "title": "My Second Project",
-    "image": "/images/project2.png",
+    "image": "images/project2.png",
     "description": "In this project, I..."
   }
 ]
