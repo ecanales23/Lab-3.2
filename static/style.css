@@ -30,35 +30,7 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
-/* ================================
-   Navigation
-================================ */
 
-nav ul,
-nav li {
-  display: contents;
-}
-
-nav {
-  display: flex;
-  margin-block: 1.5rem;
-}
-
-nav a {
-  flex: 1;
-  text-align: center;
-  text-decoration: none;
-  padding: 0.5rem;
-  color: inherit;
-}
-
-nav a.current {
-  border-bottom: 0.4em solid var(--lighter-gray);
-}
-
-nav a:hover {
-  border-bottom: 0.4em solid var(--color-accent);
-}
 
 /* ================================
    Contact Form - Grid Layout

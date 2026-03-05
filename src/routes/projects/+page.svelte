@@ -6,13 +6,7 @@
   <title>Projects</title>
 </svelte:head>
 <h1>{ projects.length } Projects</h1>
-<nav> 
-    <a href=".">Home</a>
-    <a href="projects" class="current">Projects</a>
-    <a href="contact">Contact</a>
-    <a href="resume">Resume</a>
-    <a href="https://github.com/ecanales23" target="_blank">GitHub</a>
-</nav>
+
 
 <div class="projects">
   {#each projects as p}

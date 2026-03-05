@@ -3,13 +3,6 @@
 </svelte:head>
 <h1>Resume</h1>
 
-<nav> 
-    <a href=".">Home</a>
-    <a href="projects">Projects</a>
-    <a href="contact">Contact</a>
-    <a href="resume" class="current">Resume</a>
-    <a href="https://github.com/ecanales23" target="_blank">GitHub</a>
-</nav>
 
  
 <a class="download-button" href="../images/canales-emily-resume.pdf" download>
