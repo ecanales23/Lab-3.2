@@ -2,7 +2,7 @@
   {
     "title": "Assignment 2",
     "year": 2026,
-    "image": "/images/project1.png",
+    "image": "images/project1.png",
     "description": "This assignment works with public and proprietary datasets related to MAPC’s research themes and subthemes. This is an exploratory analysis using visualization, with a focus on understanding the shape and structure of the data, investigating initial questions, and developing preliminary insights and hypotheses.",
     "story": "I approached this project as a first pass through a much larger landscape of regional data. Rather than rushing to conclusions, I used visualization to understand the contours of the datasets first—what patterns stood out, what relationships seemed plausible, and where the gaps or surprises were. The result was less about finding final answers and more about building the right questions to investigate next."
   }
@@ -10,7 +10,7 @@
   {
     "title": "Assignment 3",
     "year": 2026,
-    "image": "/images/project2.png",
+    "image": "images/project2.png",
     "description": "This assignment focused much more intently on design choices by critiquing a well-known visualization, and developing a redesign first through a series of sketches, and then through a final, polished version.",
     "story": "I started this project thinking redesign was mostly about making something cleaner. It turned out to be more about learning how a visualization guides attention, builds trust, and quietly tells the viewer what matters. Sketching multiple alternatives forced me to slow down and see design as a series of decisions rather than decoration. The takeaway: clarity is rarely accidental."
   }
@@ -18,7 +18,7 @@
   {
     "title": "Assignment 4",
     "year": 2026,
-    "image": "/images/a4.jpeg",
+    "image": "images/a4.jpeg",
     "description": "In this project two ethically crafted visualizations are created with opposing perspectives, to the same question, on a single dataset.",
     "story": "This project made it impossible to pretend that charts are neutral. Using the same dataset to create two opposing but still ethical visualizations showed me how much power lives in framing, emphasis, and sequencing. Nothing had to be falsified for the story to change; the perspective shifted because the design did. The takeaway: honesty in visualization is not the absence of argument, but transparency about it."
   }
