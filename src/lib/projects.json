@@ -2,7 +2,7 @@
   {
     "title": "Assignment 2",
     "year": 2026,
-    "image": "static/images/project1.png",
+    "image": "images/project1.png",
     "description": "This assignment works with public and proprietary datasets related to MAPC’s research themes and subthemes. This is an exploratory analysis using visualization, with a focus on understanding the shape and structure of the data, investigating initial questions, and developing preliminary insights and hypotheses.",
     "story": "I approached this project as a first pass through a much larger landscape of regional data. Rather than rushing to conclusions, I used visualization to understand the contours of the datasets first—what patterns stood out, what relationships seemed plausible, and where the gaps or surprises were. The result was less about finding final answers and more about building the right questions to investigate next."
   }
