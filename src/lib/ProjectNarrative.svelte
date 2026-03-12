@@ -40,3 +40,32 @@ $: activeProjectIdx = Math.min(
 
   </Scrolly>
 </div>
+
+
+<style>
+.scrolly-wrapper {
+  width: min(1000ch, 60vw);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step {
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+.step-content {
+  border-left: 2px solid var(--accent-color);
+  padding: 1.5rem 2rem;
+}
+
+.project-detail {
+  padding: 2rem;
+  width: 100%;
+}
+
+.project-detail img {
+  width: 100%;
+}
+</style>
