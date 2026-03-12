@@ -17,10 +17,6 @@ img {
   max-width: 75%;
   height: auto;
 }
-
-
-
-
 article {
   display: grid;
   grid-template-rows: subgrid;
@@ -29,9 +25,7 @@ article {
   border-radius: 6px;
   padding: 1em;
 }
-
 h2 {
   margin: 0;
 }
-
 </style>

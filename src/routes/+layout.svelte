@@ -55,10 +55,7 @@ let pages = [
 <!-- Styling Navigation Bar -->
 
 <style>
-nav ul,
-nav li {
-  display: contents;
-}
+
 
 nav {
   display: flex;
