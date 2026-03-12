@@ -3,17 +3,14 @@
     "title": "Assignment 2",
     "year": 2026,
     "image": "images/project1.png",
-    "description": "This assignment works with public and proprietary datasets related to MAPC’s research themes and subthemes. This is an exploratory analysis using visualization, with a focus on understanding the shape and structure of the data, investigating initial questions, and developing preliminary insights and hypotheses."
     "description": "This assignment works with public and proprietary datasets related to MAPC’s research themes and subthemes. This is an exploratory analysis using visualization, with a focus on understanding the shape and structure of the data, investigating initial questions, and developing preliminary insights and hypotheses.",
     "story": "I approached this project as a first pass through a much larger landscape of regional data. Rather than rushing to conclusions, I used visualization to understand the contours of the datasets first—what patterns stood out, what relationships seemed plausible, and where the gaps or surprises were. The result was less about finding final answers and more about building the right questions to investigate next."
   }
   ,
   {
-    "title": "My Second Project",
     "title": "Assignment 3",
     "year": 2026,
     "image": "images/project2.png",
-    "description": "In this project, I..."
     "description": "This assignment focused much more intently on design choices by critiquing a well-known visualization, and developing a redesign first through a series of sketches, and then through a final, polished version.",
     "story": "I started this project thinking redesign was mostly about making something cleaner. It turned out to be more about learning how a visualization guides attention, builds trust, and quietly tells the viewer what matters. Sketching multiple alternatives forced me to slow down and see design as a series of decisions rather than decoration. The takeaway: clarity is rarely accidental."
   }
