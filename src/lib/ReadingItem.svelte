@@ -38,10 +38,7 @@ img {
     margin: 0;
   }
  
-  .reading-panel {
-    padding: 1.5rem;
-    background: #c8d0d0; 
-  }
+ 
 
   h2 {
     margin: 0 0 1rem 0;
@@ -49,10 +46,6 @@ img {
     font-weight: 800;
   }
 
-  .readings {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; 
-  }
+
 
 </style>
