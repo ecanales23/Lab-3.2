@@ -1,32 +1,8 @@
-[
-  {
-    "title": "Assignment 2",
-    "year": 2026,
-    "image": "images/project1.png",
-    "description": "This assignment works with public and proprietary datasets related to MAPC’s research themes and subthemes. This is an exploratory analysis using visualization, with a focus on understanding the shape and structure of the data, investigating initial questions, and developing preliminary insights and hypotheses.",
-    "story": "I approached this project as a first pass through a much larger landscape of regional data. Rather than rushing to conclusions, I used visualization to understand the contours of the datasets first—what patterns stood out, what relationships seemed plausible, and where the gaps or surprises were. The result was less about finding final answers and more about building the right questions to investigate next."
-  }
-  ,
-  {
-    "title": "Assignment 3",
-    "year": 2026,
-    "image": "images/project2.png",
-    "description": "This assignment focused much more intently on design choices by critiquing a well-known visualization, and developing a redesign first through a series of sketches, and then through a final, polished version.",
-    "story": "I started this project thinking redesign was mostly about making something cleaner. It turned out to be more about learning how a visualization guides attention, builds trust, and quietly tells the viewer what matters. Sketching multiple alternatives forced me to slow down and see design as a series of decisions rather than decoration. The takeaway: clarity is rarely accidental."
-  }
-  ,
-  {
-    "title": "Assignment 4",
-    "year": 2026,
-    "image": "images/a4.jpeg",
-    "description": "In this project two ethically crafted visualizations are created with opposing perspectives, to the same question, on a single dataset.",
-    "story": "This project made it impossible to pretend that charts are neutral. Using the same dataset to create two opposing but still ethical visualizations showed me how much power lives in framing, emphasis, and sequencing. Nothing had to be falsified for the story to change; the perspective shifted because the design did. The takeaway: honesty in visualization is not the absence of argument, but transparency about it."
-  }
-  ,
+
   {
     "title": "Crowd Sourced City Final Project",
     "year": 2025,
-    "image": "images/crowd.jpg",
+    "image": "/images/crowd.jpg",
     "description": "In this project, I was apart of the Data Visualization team that worked on creating a dashboard for the MA convenants project.",
     "story": "Working on the dashboard for the MA covenants project taught me that making information available is not the same thing as making it understandable. A good dashboard has to do both: hold complexity and still give people a way in. I was part of the data visualization team, but the real challenge was interpretive as much as technical. The takeaway: access depends on design."
   }
@@ -34,7 +10,7 @@
   {
     "title": "D-Lab Development: Dominican Republic",
     "year": 2026,
-    "image": "images/project3.png",
+    "image": "/images/project3.png",
     "description": "In this project my team and I worked with the Peregrine Fund to further development in the remote town of Los Limones, Los Haitises, Dominican Republic.",
     "story": "This project changed the pace at which I thought development work should happen. It was not about arriving with the smartest idea, but about listening long enough to understand what mattered in Los Limones before treating anything like a solution. Working with the Peregrine Fund and my team made that clear very quickly. The takeaway: good intentions are not enough; context has to come first."
   }
@@ -42,7 +18,7 @@
   {
     "title": "Applied Data Science for Cities Final Project",
     "year": 2025,
-    "image": "images/mbtabus.webp",
+    "image": "/images/mbtabus.webp",
     "description": "In this project my team and I analyzed the MBTA's bus routes accessibility.",
     "story": "We began with bus accessibility, but the project quickly became about something larger: who gets reached easily by the city, and who has to work harder for the same mobility. Looking at MBTA routes through data made uneven access feel much more concrete. What appears to be a transit map is also a map of opportunity. The takeaway: infrastructure tells you a lot about who a city is built for."
   }
@@ -50,7 +26,7 @@
   {
     "title": "Modeling Pedestrian Activities Final Project",
     "year": 2024,
-    "image": "images/modelingpedestrian.jpg",
+    "image": "/images/modelingpedestrian.jpg",
     "description": "In this project my team and I focused on possible redevelopment strategies for Kendall Square, focused around making the neighborhood a 24 hour and weekend destination.",
     "story": "Kendall Square already has energy, but much of it seems tied to working hours. This project pushed me to think about what it would take for a neighborhood to stay active after the offices empty and on weekends when routine changes. The more we looked at redevelopment strategies, the more it felt like a question of rhythm as much as land use. The takeaway: vibrant places are designed for life outside the 9-to-5."
   }
@@ -58,7 +34,7 @@
   {
     "title": "Cybersecurity Clinic Report: Upton, MA",
     "year": 2024,
-    "image": "images/cybersecurity.jpg",
+    "image": "/images/cybersecurity.jpg",
     "description": "In this project my team and I created a report analyzing the town of Upton, MA 's cybersecurity infrastructure.",
     "story": "At first, cybersecurity felt like a technical problem happening somewhere in the background. This project made it feel much more immediate: a matter of systems, habits, vulnerabilities, and what institutions choose to prioritize before something goes wrong. Our report on Upton’s infrastructure was about identifying risk, but also about making that risk legible. The takeaway: resilience depends as much on preparation as on protection."
   }
@@ -66,7 +42,7 @@
       {
     "title": "Thesis",
     "year": 2026,
-    "image": "images/kendall.jpg",
+    "image": "/images/kendall.jpg",
     "description": "My thesis project hopes to further develop the modeling pedestrian activities project.",
     "story": "This thesis grew out of a question I was not finished with. The earlier pedestrian modeling project gave me a framework, but not a final answer, and I kept returning to the same curiosity about how neighborhoods become active, social, and sustained over time. Rather than closing that question, the thesis lets me stay with it more seriously. The takeaway: sometimes the most important projects are the ones that keep following you."
   }

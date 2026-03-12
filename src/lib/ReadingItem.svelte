@@ -5,7 +5,7 @@
 <article class="reading">
   <img class="cover" src={data.image} alt={data.title} />
   <div class="meta">
-    <h3 class="title">{data.title}</h3>
+    <h2 class="title">{data.title}</h2>
     <p class="author">{data.author}</p>
   </div>
 </article>
