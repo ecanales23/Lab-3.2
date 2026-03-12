@@ -1,8 +1,8 @@
-
+[
   {
     "title": "Crowd Sourced City Final Project",
     "year": 2025,
-    "image": "images/crowd.jpg",
+    "image": "/images/crowd.jpg",
     "description": "In this project, I was apart of the Data Visualization team that worked on creating a dashboard for the MA convenants project.",
     "story": "Working on the dashboard for the MA covenants project taught me that making information available is not the same thing as making it understandable. A good dashboard has to do both: hold complexity and still give people a way in. I was part of the data visualization team, but the real challenge was interpretive as much as technical. The takeaway: access depends on design."
   }
@@ -10,7 +10,7 @@
   {
     "title": "D-Lab Development: Dominican Republic",
     "year": 2026,
-    "image": "images/project3.png",
+    "image": "/images/project3.png",
     "description": "In this project my team and I worked with the Peregrine Fund to further development in the remote town of Los Limones, Los Haitises, Dominican Republic.",
     "story": "This project changed the pace at which I thought development work should happen. It was not about arriving with the smartest idea, but about listening long enough to understand what mattered in Los Limones before treating anything like a solution. Working with the Peregrine Fund and my team made that clear very quickly. The takeaway: good intentions are not enough; context has to come first."
   }
