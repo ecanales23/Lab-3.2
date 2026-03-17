@@ -7,6 +7,7 @@
     <h2 class="title">{data.title}
     </h2>
     <img class="projects" src={data.image} alt={data.title}>
+    <p class="year">{data.year}</p>
     <p>{data.description}</p>
 </article>
 
@@ -27,5 +28,11 @@ article {
 }
 h2 {
   margin: 0;
+}
+.year {
+  font-size: 0.85rem;
+  color: gray;
+  margin: 0.25em 0;
+  font-style: italic;
 }
 </style>
