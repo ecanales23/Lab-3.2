@@ -24,7 +24,7 @@ jobs:
 
       - name: Configure git
         run: |
-          git config --global user.email "canalesemily33@gmail.com"
+          git config --global user.email "eycanal@mit.edu"
           git config --global user.name "ecanales23"
 
       - name: Generate loc.csv
