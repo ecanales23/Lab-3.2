@@ -2,20 +2,19 @@
 import * as d3 from 'd3';
 
 let width = 500;
-let height = 300;
+let height = 150;
 export let data = [];
+export let title = "";
 
-let margin = { top: 40, right: 160, bottom: 50, left: 80 };
+let margin = { top: 25, right: 100, bottom: 35, left: 70 };
 let innerWidth  = width  - margin.left - margin.right;
 let innerHeight = height - margin.top  - margin.bottom;
 let xAxis, yAxis;
 
-// xScale is now linear (quantitative)
 $: xScale = d3.scaleLinear()
     .domain([0, d3.max(data, d => d.value) || 1])
     .range([0, innerWidth]);
 
-// yScale is now band (categorical)
 $: yScale = d3.scaleBand()
     .domain(data.map(d => d.label))
     .range([0, innerHeight])
@@ -25,7 +24,10 @@ $: colorScale = d3.scaleOrdinal(d3.schemeTableau10)
     .domain(data.map(d => d.label));
 
 $: if (xAxis && yAxis) {
-    d3.select(xAxis).call(d3.axisBottom(xScale).ticks(5));
+    d3.select(xAxis).call(
+        d3.axisBottom(xScale)
+          .ticks(Math.min(10, d3.max(data, d => d.value)))
+    );
     d3.select(yAxis).call(d3.axisLeft(yScale));
 }
 
@@ -34,13 +36,12 @@ $: maxBar = d3.greatest(data, d => d.value);
 
 <div class="container">
     <svg viewBox="0 0 {width} {height}">
-        <!-- Title -->
         <text
             x={margin.left + innerWidth / 2}
             y={margin.top / 2}
             text-anchor="middle"
             class="chart-title">
-            Lines of Code by Language
+            {title}
         </text>
 
         <g transform="translate({margin.left}, {margin.top + innerHeight})"
@@ -60,7 +61,6 @@ $: maxBar = d3.greatest(data, d => d.value);
             {/each}
 
             {#if maxBar}
-                <!-- highlight outline -->
                 <rect
                     x={0}
                     y={yScale(maxBar.label)}
@@ -70,38 +70,27 @@ $: maxBar = d3.greatest(data, d => d.value);
                     stroke="currentColor"
                     stroke-width="2"
                 />
-                <!-- leader line -->
-                <line
-                    x1={xScale(maxBar.value)}
-                    y1={yScale(maxBar.label) + yScale.bandwidth() / 2}
-                    x2={xScale(maxBar.value) + 10}
-                    y2={yScale(maxBar.label) + yScale.bandwidth() / 2}
-                    stroke="currentColor"
-                    stroke-width="1"
-                />
-                <!-- annotation -->
                 <text
-                    x={xScale(maxBar.value) + 15}
+                    x={xScale(maxBar.value) + 5}
                     y={yScale(maxBar.label) + yScale.bandwidth() / 2}
                     dominant-baseline="middle"
+                    text-anchor="start"
                     class="annotation">
                     Most lines
                 </text>
             {/if}
 
-            <!-- x-axis label -->
             <text
                 x={innerWidth / 2}
-                y={innerHeight + margin.bottom - 10}
+                y={innerHeight + margin.bottom - 8}
                 text-anchor="middle"
                 class="axis-label">
                 Lines of Code
             </text>
 
-            <!-- y-axis label -->
             <text
                 x={-(innerHeight / 2)}
-                y={-margin.left + 20}
+                y={-margin.left + 15}
                 text-anchor="middle"
                 transform="rotate(-90)"
                 class="axis-label">
@@ -135,10 +124,11 @@ svg {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
     list-style: none;
     padding: 0;
     margin: 0;
+    font-size: 0.8em;
 }
 li {
     display: flex;
@@ -147,30 +137,16 @@ li {
 }
 .swatch {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     background-color: var(--color);
     border-radius: 2px;
     flex-shrink: 0;
 }
-
-.chart-title {
-    font-size: 1em;
-    font-weight: bold;
-    fill: currentColor;  /* inherits from the page theme */
-}
-.axis-label {
-    font-size: 0.6em;
-    fill: currentColor;
-    opacity: 0.6;        /* slightly muted without hardcoding gray */
-}
-.annotation {
-    font-size: 0.7em;
-    fill: currentColor;
-    font-style: italic;
-}
+.chart-title { font-size: 0.75em; font-weight: bold; fill: currentColor; }
+.axis-label { font-size: 0.5em; fill: currentColor; opacity: 0.6; }
+.annotation { font-size: 0.55em; fill: currentColor; font-style: italic; }
 :global(.domain) { stroke: currentColor; opacity: 0.5; }
 :global(.tick line) { stroke: currentColor; opacity: 0.5; }
-:global(.tick text) { fill: currentColor; font-size: 0.75em; }
-
+:global(.tick text) { fill: currentColor; font-size: 0.65em; }
 </style>
