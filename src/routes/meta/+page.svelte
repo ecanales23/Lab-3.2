@@ -23,6 +23,7 @@
         autoPlacement,
         offset,
     } from '@floating-ui/dom';
+    import LineChart from '$lib/LineChart.svelte';
 
     let locData = [];
     let locBarData = [];
@@ -44,11 +45,23 @@
     let commitTooltip;
     let tooltipPosition = {x: 0, y: 0};
     let clickedCommits = [];
+    let svg;
+    let brushSelection = null;
+    let linesByDate = [];
 
+
+   $: {
+    d3.select(svg).call(d3.brush()
+        .extent([[usableArea.left, usableArea.top], [usableArea.right, usableArea.bottom]])
+        .on("start brush end", brushed)
+    );
+    d3.select(svg).selectAll(".dots, .overlay ~ *").raise();
+    }
 
     $: hoveredCommit = commits[hoveredIndex] ?? hoveredCommit ?? {};
 
-    
+    $: brushedCommits = brushSelection ? commits.filter(isCommitBrushed) : [];
+    $: selectedCommits = Array.from(new Set([...clickedCommits, ...brushedCommits]));
     $: rScale = d3.scaleSqrt()
                 .domain(d3.extent(commits, d => d.totalLines))
                 .range([5, 30]);
@@ -76,9 +89,7 @@
             .tickSize(-usableArea.width)
         );
     }
-    $: selectedLines = clickedCommits.length > 0 
-        ? clickedCommits.flatMap(d => d.lines) 
-        : locData;
+    $: selectedLines = (selectedCommits.length > 0 ? selectedCommits : commits).flatMap(d => d.lines);
 
     $: selectedCounts = d3.rollup(selectedLines, v => v.length, d => d.type);
 
@@ -88,6 +99,27 @@
         label: String(type), 
         value: selectedCounts.get(type) || 0 
     }));
+
+    $: {
+	// 1. Get the count for each date in the data
+	const rolled = d3.rollups(
+		locData,
+		v => v.length,
+		d => d3.timeDay.floor(d.datetime)
+	).map(([date, count]) => ({ date, count }));
+
+	// 2. Get an array of all days covered by the data
+	const [minDate, maxDate] = d3.extent(rolled, d => d.date);
+	const allDays = d3.timeDays(minDate, d3.timeDay.offset(maxDate, 1));
+
+	// 3. Build linesByDate by filling all undefined dates with 0 counts
+	linesByDate = allDays.map(date => ({
+		date,
+		count: rolled.find(d => d.date.getTime() === date.getTime())?.count ?? 0
+	}));
+
+}
+
     onMount(async () => {
     
     locData = await d3.csv(`${base}/loc.csv`, row => ({
@@ -126,6 +158,7 @@
     locBarData = d3.rollups(locData, v => v.length, d => d.type)
         .sort((a, b) => b[1] - a[1])
         .map(([lang, count]) => ({ label: lang, value: count }));
+    
 });
 
 async function dotInteraction(index, evt) {
@@ -154,6 +187,20 @@ async function dotInteraction(index, evt) {
         }
     }
 }
+function brushed(evt) {
+    brushSelection = evt.selection;
+}
+
+function isCommitBrushed(commit) {
+    if (!brushSelection) return false;
+    let min = {x: brushSelection[0][0], y: brushSelection[0][1]};
+    let max = {x: brushSelection[1][0], y: brushSelection[1][1]};
+    let x = xScale(commit.date);
+    let y = yScale(commit.hourFrac);
+    return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+    }
+
+    
 </script>
 
 
@@ -162,18 +209,18 @@ async function dotInteraction(index, evt) {
 
 <BarHorizontal 
     data={barData} 
-    title={clickedCommits.length > 0 ? "Selected Commits" : "Lines of Code by Language"}
+    title={selectedCommits.length > 0 ? `Lines of Code: ${selectedCommits.length} Selected Commits` : "Lines of Code by Language"}
 />
 <h3>Commits by time of day</h3>
 
-<svg viewBox="0 0 {width} {height}">
+<svg viewBox="0 0 {width} {height}" bind:this={svg}>
     <g class="gridlines" transform="translate({usableArea.left}, 0)" bind:this={yAxisGridlines} />
     <g transform="translate(0, {usableArea.bottom})" bind:this={xAxis} />
     <g transform="translate({usableArea.left}, 0)" bind:this={yAxis} />
     <g class="dots">
         {#each commits as commit, index}  
             <circle
-                class:selected={ clickedCommits.includes(commit) }
+                class:selected={selectedCommits.includes(commit)} 
                 cx={xScale(commit.datetime)}
                 cy={yScale(commit.hourFrac)}
                 r={rScale(commit.totalLines)}
@@ -204,6 +251,8 @@ async function dotInteraction(index, evt) {
     <dt>Lines edited</dt>
     <dd>{hoveredCommit.totalLines}</dd>
 </dl>
+
+<LineChart data={linesByDate} />
 
 <style>
 dl.stats {
@@ -261,6 +310,20 @@ dl.info {
 }
 .selected {
     fill: var(--color-accent);
+}
+
+@keyframes marching-ants {
+	to {
+		stroke-dashoffset: -8; /* 5 + 3 */
+	}
+}
+
+svg :global(.selection) {
+	fill-opacity: 10%;
+	stroke: currentColor;
+	stroke-opacity: 70%;
+	stroke-dasharray: 5 3;
+	animation: marching-ants 2s linear infinite;
 }
 
 </style>
