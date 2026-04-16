@@ -63,11 +63,19 @@
     "story": "At first, cybersecurity felt like a technical problem happening somewhere in the background. This project made it feel much more immediate: a matter of systems, habits, vulnerabilities, and what institutions choose to prioritize before something goes wrong. Our report on Upton’s infrastructure was about identifying risk, but also about making that risk legible. The takeaway: resilience depends as much on preparation as on protection."
   }
   ,
-      {
+  {
     "title": "Thesis",
     "year": 2026,
     "image": "images/kendall.jpg",
     "description": "My thesis project hopes to further develop the modeling pedestrian activities project.",
     "story": "This thesis grew out of a question I was not finished with. The earlier pedestrian modeling project gave me a framework, but not a final answer, and I kept returning to the same curiosity about how neighborhoods become active, social, and sustained over time. Rather than closing that question, the thesis lets me stay with it more seriously. The takeaway: sometimes the most important projects are the ones that keep following you."
+  }
+,
+  {
+    "title": "Geospatial Visualizations",
+    "year": 2026,
+    "image": "images/Lab9.png",
+    "description": "Learn how to embed a Mapbox map into a webpage",
+    "story": "This project was a great introduction to geospatial visualizations. I learned how to use Mapbox to create interactive maps that can be embedded into a webpage. It was fascinating to see how spatial data can be visualized in a way that is both informative and engaging. The takeaway: geospatial visualizations can provide powerful insights into spatial patterns and relationships."
   }
 ]
