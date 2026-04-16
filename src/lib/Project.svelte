@@ -4,8 +4,13 @@
 
 
 <article>
-    <h2 class="title">{data.title}
-    </h2>
+  <h2 class="title">
+      {#if data.url}
+          <a href={data.url} target="_blank">{data.title}</a>
+      {:else}
+          {data.title}
+      {/if}
+  </h2>
     <img class="projects" src={data.image} alt={data.title}>
     <p class="year">{data.year}</p>
     <p>{data.description}</p>
@@ -34,5 +39,13 @@ h2 {
   color: gray;
   margin: 0.25em 0;
   font-style: italic;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 </style>

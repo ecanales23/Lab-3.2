@@ -35,6 +35,7 @@
     "title": "D-Lab Development: Dominican Republic",
     "year": 2026,
     "image": "images/project3.png",
+    "url":"https://d-lab.mit.edu/following-los-limones-dominican-republic-chicken-coops-net-making-signage-kids-co-design-and-more",
     "description": "In this project my team and I worked with the Peregrine Fund to further development in the remote town of Los Limones, Los Haitises, Dominican Republic.",
     "story": "This project changed the pace at which I thought development work should happen. It was not about arriving with the smartest idea, but about listening long enough to understand what mattered in Los Limones before treating anything like a solution. Working with the Peregrine Fund and my team made that clear very quickly. The takeaway: good intentions are not enough; context has to come first."
   }
@@ -43,6 +44,7 @@
     "title": "Applied Data Science for Cities Final Project",
     "year": 2025,
     "image": "images/mbtabus.webp",
+    "url": "https://ecanal23.shinyapps.io/AcessibilityBuffer/",
     "description": "In this project my team and I analyzed the MBTA's bus routes accessibility.",
     "story": "We began with bus accessibility, but the project quickly became about something larger: who gets reached easily by the city, and who has to work harder for the same mobility. Looking at MBTA routes through data made uneven access feel much more concrete. What appears to be a transit map is also a map of opportunity. The takeaway: infrastructure tells you a lot about who a city is built for."
   }
@@ -75,6 +77,7 @@
     "title": "Geospatial Visualizations",
     "year": 2026,
     "image": "images/Lab9.png",
+    "url": "https://ecanales23.github.io/Lab9-geospatialvisualizations/",
     "description": "Learn how to embed a Mapbox map into a webpage",
     "story": "This project was a great introduction to geospatial visualizations. I learned how to use Mapbox to create interactive maps that can be embedded into a webpage. It was fascinating to see how spatial data can be visualized in a way that is both informative and engaging. The takeaway: geospatial visualizations can provide powerful insights into spatial patterns and relationships."
   }
