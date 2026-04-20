@@ -162,23 +162,21 @@
 });
 
 async function dotInteraction(index, evt) {
-    console.log(clickedCommits);
     let hoveredDot = evt.target;
-    if (evt.type === "mouseenter") {
+    if (evt.type === "mouseenter" || evt.type === "focus") {
         hoveredIndex = index;
         cursor = {x: evt.x, y: evt.y};
-        tooltipPosition = await computePosition(hoveredDot, commitTooltip, {
-            strategy: "fixed",
-            middleware: [
-                offset(5),
-                autoPlacement()
-            ],
-        });
+        if (commitTooltip) {
+            tooltipPosition = await computePosition(hoveredDot, commitTooltip, {
+                strategy: "fixed",
+                middleware: [
+                    offset(5),
+                    autoPlacement()
+                ],
+            });
+        }
     }
-    else if (evt.type === "mouseleave") {
-        hoveredIndex = -1;
-    }
-    else if (evt.type === "click") {
+    else if (evt.type === "click" || (evt.type === "keyup" && evt.key === "Enter")) {
         let commit = commits[index];
         if (!clickedCommits.includes(commit)) {
             clickedCommits = [...clickedCommits, commit];
@@ -226,9 +224,16 @@ function isCommitBrushed(commit) {
                 r={rScale(commit.totalLines)}
                 fill="steelblue"
                 fill-opacity="0.5"
+                tabindex="0"
+                role="button"
+                aria-describedby="commit-tooltip"
+                aria-haspopup="true"
                 on:mouseenter={evt => dotInteraction(index, evt)}
                 on:mouseleave={evt => dotInteraction(index, evt)}
-                on:click={ evt => dotInteraction(index, evt) }
+                on:click={evt => dotInteraction(index, evt)}
+                on:keyup={evt => dotInteraction(index, evt)}
+                on:focus={evt => dotInteraction(index, evt)}
+                on:blur={evt => dotInteraction(index, evt)}
             />
         {/each}
     </g>
@@ -236,6 +241,8 @@ function isCommitBrushed(commit) {
 
 <dl 
     class="info tooltip" 
+    id="commit-tooltip"
+    role="tooltip"
     hidden={hoveredIndex === -1}
     bind:this={commitTooltip}
     style="top: {tooltipPosition.y}px; left: {tooltipPosition.x}px"
